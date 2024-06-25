@@ -1,0 +1,8 @@
+<% issue = @issue if @issue && @issue.present? && !@issue.new_record? ? @issue : nil %>
+<%= call_hook(:view_issues_sidebar_issues_bottom_ext, { :issue => issue }) %>
+
+<%= call_hook(:view_issues_sidebar_issues_bottom) %>
+<%= call_hook(:view_issues_sidebar_planning_bottom) %>
+
+<%= render_sidebar_queries(IssueQuery, @project) %>
+<%= call_hook(:view_issues_sidebar_queries_bottom) %>
